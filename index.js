@@ -2,14 +2,19 @@ const noButton = document.getElementById("no");
 const yesButton = document.getElementById("yes");
 
 noButton.addEventListener("mouseover", () => {
-  const x = Math.random() * 300;
-  const y = Math.random() * 300;
+  const buttonWidth = noButton.offsetWidth;
+  const buttonHeight = noButton.offsetHeight;
+
+  const maxX = window.innerWidth - buttonWidth - 20;
+  const maxY = window.innerHeight - buttonHeight - 20;
+
+  const x = Math.random() * maxX;
+  const y = Math.random() * maxY;
 
   noButton.style.position = "absolute";
   noButton.style.left = x + "px";
   noButton.style.top = y + "px";
 });
-
 
 function createConfetti() {
     const confetti = document.createElement("div");
@@ -45,7 +50,6 @@ yesButton.addEventListener("click", () => {
     </h1>
   `;
 
-  // Load Tenor script properly
   const script = document.createElement("script");
   script.src = "https://tenor.com/embed.js";
   script.async = true;
@@ -53,3 +57,4 @@ yesButton.addEventListener("click", () => {
 
   setInterval(createConfetti, 100);
 });
+
