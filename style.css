@@ -19,11 +19,6 @@ body {
     cursor: pointer;
   }
 
-  #no {
-  position: absolute;
-  transition: all 0.2s ease;
-  }
-
   .confetti {
     position: fixed;
     top: -10px;
@@ -39,5 +34,6 @@ body {
     }
   }
   
+
 
 
